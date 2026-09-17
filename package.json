@@ -1,0 +1,13 @@
+{
+  "name": "huggingface-proxy",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@gradio/client": "latest",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
