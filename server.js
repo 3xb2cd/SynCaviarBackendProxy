@@ -28,7 +28,7 @@ app.post('/api/inferpls', async (req, res) => {
 
         const result = await hfApp.predict("/inferpls", [base64SnOps, singerName]);
         res.json({ data: result.data }); 
-        console.log("[server]captured data length: "+result.data.spectrogram.length+result.data.audio.length);
+        console.log("[server]captured data length: "+result.data[0].length+result.data[1].length);
         
     } catch (err) {
         console.error(err);
