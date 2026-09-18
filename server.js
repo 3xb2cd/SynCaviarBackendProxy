@@ -11,7 +11,7 @@ let hfApp = null;
 async function initClient() {
     // This looks for the HF_TOKEN environment variable you set in the Render/Railway dashboard
     hfApp = await client("hindsightform/syncaviarutaite", { 
-        token: process.env.HF_TOKEN 
+        hf_token: process.env.HF_TOKEN , auth: process.env.HF_TOKEN 
     });
     console.log("[server]Connected to Hugging Face Space");
 }
