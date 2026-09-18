@@ -17,7 +17,7 @@ async function initClient() {
 }
 initClient();
 
-app.post('/api/infer', async (req, res) => {
+app.post('/api/inferpls', async (req, res) => {
     try {
         const { base64SnOps, singerName } = req.body;
         
