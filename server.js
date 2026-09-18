@@ -20,6 +20,7 @@ initClient();
 app.post('/api/inferpls', async (req, res) => {
     try {
         const { base64SnOps, singerName } = req.body;
+        console.log("got request for " + singerName);
         
         if (!hfApp) {
             return res.status(503).json({ error: "Gradio client not ready yet." });
@@ -27,6 +28,7 @@ app.post('/api/inferpls', async (req, res) => {
 
         const result = await hfApp.predict("/inferpls", [base64SnOps, singerName]);
         res.json({ data: result.data }); 
+        console.log("captured data length: "+result.data.spectrogram.length+result.data.audio.length);
         
     } catch (err) {
         console.error(err);
